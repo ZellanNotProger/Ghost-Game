@@ -1,0 +1,40 @@
+[api-updater (non-obsolete-error-filter)] 29.09.2023 15:47:21 : Starting D:/ForUnity/Новая папка/2020.3.47f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
+[api-updater (non-obsolete-error-filter)] 
+----------------------------------
+jit/startup time      : 1138,1765ms
+moved types parse time: 39ms
+candidates parse time : 0ms
+C# parse time         : 685ms
+candidates check time : 41ms
+console write time    : 0ms
+
+[api-updater (non-obsolete-error-filter)] 29.09.2023 16:27:34 : Starting D:/ForUnity/Новая папка/2020.3.47f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
+[api-updater (non-obsolete-error-filter)] 
+----------------------------------
+jit/startup time      : 42,9993ms
+moved types parse time: 36ms
+candidates parse time : 0ms
+C# parse time         : 141ms
+candidates check time : 35ms
+console write time    : 0ms
+
+[api-updater (non-obsolete-error-filter)] 29.09.2023 16:41:30 : Starting D:/ForUnity/Новая папка/2020.3.47f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
+[api-updater (non-obsolete-error-filter)] 
+----------------------------------
+jit/startup time      : 40,9999ms
+moved types parse time: 35ms
+candidates parse time : 0ms
+C# parse time         : 136ms
+candidates check time : 31ms
+console write time    : 0ms
+
+[api-updater (non-obsolete-error-filter)] 12.10.2023 15:34:45 : Starting D:/ForUnity/Новая папка/2020.3.47f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
+[api-updater (non-obsolete-error-filter)] 
+----------------------------------
+jit/startup time      : 1149,4134ms
+moved types parse time: 45ms
+candidates parse time : 7ms
+C# parse time         : 576ms
+candidates check time : 27ms
+console write time    : 20ms
+
