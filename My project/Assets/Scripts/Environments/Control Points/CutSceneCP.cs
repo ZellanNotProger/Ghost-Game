@@ -24,8 +24,6 @@ public class CutSceneCP : MonoBehaviour
         if (collision.CompareTag(_playerTag))
         {
             _isEnterControlPoint = true;
-
-            Debug.Log(_isEnterControlPoint);
         }
     }
 }

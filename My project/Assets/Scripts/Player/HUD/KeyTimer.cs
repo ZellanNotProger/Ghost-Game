@@ -5,9 +5,10 @@ using UnityEngine.UI;
 public class KeyTimer : MonoBehaviour
 {
     [SerializeField] private Slider _slider;
+    [SerializeField] private EffectTimer _effectTimer;
     [SerializeField] private TMP_InputField _linchpinActionTimeInputField;
 
-    private readonly string _linchpinActionTimeKey = "KeyTime", _linchpinGameObjectKey = "Key";
+    private readonly string _linchpinActionTimeKey = "KeyTime", _keyTag = "Key";
 
     private GameObject _linchpinGameObject;
     private float _linchpinActionTime;
@@ -15,7 +16,7 @@ public class KeyTimer : MonoBehaviour
 
     void Start()
     {
-        _linchpinGameObject = GameObject.FindWithTag(_linchpinGameObjectKey);
+        _linchpinGameObject = GameObject.FindWithTag(_keyTag);
 
         _linchpinActionTime = PlayerPrefs.GetFloat(_linchpinActionTimeKey);
 
@@ -33,6 +34,7 @@ public class KeyTimer : MonoBehaviour
     public void StartKeyTimer(bool isStarted)
     {
         _isStarted = isStarted;
+        _effectTimer.ResetEffectTimer();
     }
 
     private void Timer()

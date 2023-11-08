@@ -1,10 +1,7 @@
-using TMPro;
 using UnityEngine;
 
 public class Settings : MonoBehaviour
 {
-    [SerializeField] private TMP_Dropdown _qualityDropdown;
-
     private readonly string _fullscreenPref = "FullscreenPreference";
 
     private void Start()

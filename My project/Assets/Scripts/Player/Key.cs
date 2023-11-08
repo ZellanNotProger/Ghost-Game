@@ -9,10 +9,13 @@ public class Key : MonoBehaviour
 
     private readonly string _keyTag = "Key";
 
+    private GameObject _key;
     private bool _isPickedUp;
 
     private void Start()
     {
+        _key = GameObject.FindWithTag(_keyTag);
+
         _slider.gameObject.SetActive(false);
         _keyDescriptionText.gameObject.SetActive(false);
     }
@@ -45,6 +48,7 @@ public class Key : MonoBehaviour
     {
         _isPickedUp = false;
 
+        _key.SetActive(true);
         _slider.gameObject.SetActive(false);
         _keyDescriptionText.gameObject.SetActive(false);
     }

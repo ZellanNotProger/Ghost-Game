@@ -6,6 +6,7 @@ public class EffectTimer : MonoBehaviour
 {
     [SerializeField] private Slider _slider;
     [SerializeField] private TMP_InputField _effectTimeInputField;
+    [SerializeField] private Key _key;
     [SerializeField] private TMP_Text _text;
 
     private readonly string _effectTimeKey = "EffectTime", _recoveringShardKey = "RecoveringShard";
@@ -37,6 +38,7 @@ public class EffectTimer : MonoBehaviour
     public void StartEffectTimer(string description)
     {
         ResetEffectTimer();
+        _key.BreakKey();
 
         _text.text = description;
 
@@ -63,7 +65,7 @@ public class EffectTimer : MonoBehaviour
         }
     }
 
-    private void ResetEffectTimer()
+    public void ResetEffectTimer()
     {
         _isStarted = false;
         _slider.value = 0;

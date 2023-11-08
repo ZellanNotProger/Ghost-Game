@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] private Slider _musicSlider, _soundEffectsSlider;
+    [SerializeField] private Transform _player, _mist, _mistStartPoint, _playerSpawnPoint;
     [SerializeField] private GameObject _menuCanvas, _hudGameObject;
     [SerializeField] private AudioSource _musicAudio;
     [SerializeField] private AudioSource[] _soundEffectsAudio;
@@ -33,6 +34,12 @@ public class MainMenu : MonoBehaviour
                 Pause();
             }
         }
+    }
+
+    public void StartNewGame()
+    {
+        _mist.position = _mistStartPoint.position;
+        _player.position = _playerSpawnPoint.position;
     }
 
     public void SaveSoundSettings()

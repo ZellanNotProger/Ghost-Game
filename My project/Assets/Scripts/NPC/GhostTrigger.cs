@@ -7,11 +7,13 @@ public class GhostTrigger : MonoBehaviour
     [SerializeField] private Transform _visualTrigger;
     [SerializeField] private CircleCollider2D _circleCollider;
     [SerializeField] private TMP_InputField _moveSpeedInputField, _circleColliderInputField;
+    [SerializeField] private Transform targetPoint;
 
     private readonly string playerTag = "Player", _moveSpeedKey = "GhostSpeed", _circleColliderRadiusKey = "CircleColliderRadius";
 
     private float _moveSpeed, _circleColliderRadius;
     private Transform _player;
+    private bool playerInSight = false;
 
     private void Start()
     {
@@ -34,10 +36,17 @@ public class GhostTrigger : MonoBehaviour
 
         _visualTrigger.localScale = new Vector3(rad, rad, 0f);
 
-        Debug.Log(_circleCollider.radius);
-
         PlayerPrefs.SetFloat(_moveSpeedKey, _moveSpeed);
         PlayerPrefs.SetFloat(_circleColliderRadiusKey, _circleColliderRadius);
+    }
+
+    private void Update()
+    {
+        if (!playerInSight && targetPoint != null)
+        {
+            Vector2 moveDirection = new Vector2(targetPoint.position.x - transform.position.x, 0);
+            _rigidbody.velocity = moveDirection * Time.deltaTime * _moveSpeed;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -45,6 +54,7 @@ public class GhostTrigger : MonoBehaviour
         if (collision.CompareTag(playerTag))
         {
             _rigidbody.velocity = Vector2.zero;
+            playerInSight = true;
         }
     }
 
@@ -52,8 +62,8 @@ public class GhostTrigger : MonoBehaviour
     {
         if (collision.CompareTag(playerTag))
         {
-            Vector2 moveDirection = new Vector2 ((_player.position.x - transform.position.x), 0);
-            _rigidbody.velocity = moveDirection * _moveSpeed;
+            Vector2 moveDirection = new Vector2((_player.position.x - transform.position.x), 0);
+            _rigidbody.velocity = moveDirection * Time.deltaTime  * _moveSpeed;
         }
     }
 
@@ -61,7 +71,7 @@ public class GhostTrigger : MonoBehaviour
     {
         if (collision.CompareTag(playerTag))
         {
-            _rigidbody.velocity = Vector2.zero;
+            playerInSight = false;
         }
     }
 }
